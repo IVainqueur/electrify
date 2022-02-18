@@ -5,7 +5,7 @@ const mongo = require('mongoose')
 
 
 //Middleware
-app.use(express.static('./front-end'))
+app.use(express.static('front-end'))
 app.use(bodyParser.json())
 require('dotenv').config()
 
