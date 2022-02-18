@@ -87,7 +87,7 @@ app.post('/validate', (req, res)=>{
     })
 })
 
-app.listen(80, (err)=>{
+app.listen(process.env.PORT, (err)=>{
     if(err) return console.log("Something went wrong.")
     console.log("#ServerUP")
 })
