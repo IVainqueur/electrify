@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="NavBar">
+        <a href="/" id="Logo"><img src="./bolt.svg">Electrify</a>
+        <div class="Options">
+            <a href="/">Buy New</a>
+            <a href="/check">Check Balance</a>
+            <a href="/validate" class="active">Validate</a>
+        </div>
+    </div>
+    <fieldset class="Main">
+        <legend>Check Validaty of Token</legend>
+        <input type="text" id="TokenBox" placeholder="your token number">
+        <button id="CheckBTN">CHECK</button>
+    </fieldset>
+    <fieldset class="Results hide">
+        <legend>Response</legend>
+        <span class="ResultsSpan"></span>
+    </fieldset>
+</body>
+<script src="./validate.js"></script>
+</html>

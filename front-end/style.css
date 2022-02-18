@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background-color: #0000000d;
+}
+
+.NavBar{
+    width: 100%;
+    height: 60px;
+    background: orange;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.NavBar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.NavBar a#Logo{
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+.NavBar a img{
+    transform: scale(1.5);
+}
+
+.NavBar .Options a{
+    margin-right: 20px;
+    color: rgba(255, 255, 255, 0.951);
+    padding-bottom: 2px;
+}
+.NavBar .Options a:hover{
+    border-bottom: 2px solid white;
+
+}
+.NavBar .Options a.active{
+    border-bottom: 2px solid white;
+}
+
+fieldset{
+    /* min-height: 500px; */
+    position: relative;
+    min-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border-style: hidden;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    transition: .5s ease;
+}
+
+fieldset legend{
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+}
+
+.Main input{
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.03);
+    transition: .5s ease;
+    border-radius: 5px;
+}
+
+.Main input:focus{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.Main button{
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: orange;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    transform: translateY(25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Main button:hover{
+    animation: ring .5s ease;
+}
+.loading{
+    animation: loading 1s infinite;
+}
+@keyframes ring {
+    0%{
+        transform: translateY(25px) rotate(0deg);
+    }
+    25%{
+        transform: translateY(25px) rotate(1deg);
+    }
+    75%{
+        transform: translateY(25px) rotate(-1deg);
+    }
+    100%{
+        transform: translateY(25px) rotate(0deg);
+    }
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.hide{
+    height: 0;
+    width: 0;
+    padding: 0;
+    opacity: 0;
+}
