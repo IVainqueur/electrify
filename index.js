@@ -5,7 +5,7 @@ const mongo = require('mongoose')
 
 
 //Middleware
-app.use(express.static('front-end'))
+app.use(express.static('public'))
 app.use(bodyParser.json())
 require('dotenv').config()
 
@@ -35,13 +35,13 @@ async function newToken(){
 }
 
 app.get('/', (req, res)=>{
-    res.sendFile(__dirname +"/front-end/index.html")
+    res.sendFile(__dirname +"/public/index.html")
 })
 app.get('/check', (req, res)=>{
-    res.sendFile(__dirname +"/front-end/check.html")
+    res.sendFile(__dirname +"/public/check.html")
 })
 app.get('/validate', (req, res)=>{
-    res.sendFile(__dirname +"/front-end/validate.html")
+    res.sendFile(__dirname +"/public/validate.html")
 })
 
 app.post('/buy', async (req, res)=>{
