@@ -18,6 +18,9 @@ buyBTN.addEventListener('click', (e)=>{
     if(amount%100 != 0){
        return alert("Only multiples of 100 for the amount")
     }
+    if(amount > 182500){
+        return alert("You can not buy more for than 182,500Rwf")
+    }
 
     buyBTN.innerHTML = `<img src="./loading.svg" class="loading">` + buyBTN.innerHTML
     buyBTN.style.pointerEvents = "none"

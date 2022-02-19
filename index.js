@@ -11,12 +11,16 @@ require('dotenv').config()
 
 
 
-//Connecting to the database
+// Connecting to the database
 mongo.connect(process.env.MONGO_CREDENTIALS, { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
     if(err) return console.log(err)
     console.log('#ConnectedToDB')
 })
 
+// mongo.connect("mongodb://localhost:27017/electrify", { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
+//     if(err) return console.log(err)
+//     console.log('#ConnectedToDB')
+// })
 
 //Important functions
 
@@ -52,7 +56,13 @@ app.post('/buy', async (req, res)=>{
     //! CALCULATE THE TIME
     let now = new Date(Date.now())
     now = Date.now() - (now.getMilliseconds() + now.getSeconds()*1000 + now.getMinutes()*60*1000 + now.getHours()*60*60*1000)
+
     let expiryDate = now + ((req.body.amount/100)*24*60*60*1000)
+
+    let sumOfDays = await require('./models/ml-token').find({userCode: req.body.number})
+
+    
+    
     const tokenToSave = require('./models/ml-token')({
         code: tokenCode,
         userCode: req.body.number,
